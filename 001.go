@@ -18,7 +18,7 @@ func producer(header string, channel chan<- string) {
 }
 
 // 数据消费者
-func customer(channel <-chan string) {
+func consumer(channel <-chan string) {
      // 不停地获取数据
      for {
             // 从通道中取出数据, 此处会阻塞直到信道中返回数据
@@ -35,5 +35,5 @@ func main() {
     go producer("cat", channel)
     go producer("dog", channel)
     // 数据消费函数
-    customer(channel)
+    consumer(achannel)
 }
